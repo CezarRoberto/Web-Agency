@@ -1,6 +1,9 @@
 import { Flex, Heading, HStack, Link, Icon } from "@chakra-ui/react";
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
+import {
+  Link as RouteLink
+} from "react-router-dom";
 
 
 export const Header = () => {
@@ -23,11 +26,9 @@ export const Header = () => {
           My Logo
         </Heading>
         <HStack color="whiteAlpha.700" spacing="40px">
-
-          <Link>Home</Link>
-          <Link>Service</Link>
-          <Link>About us</Link>
-
+          <Link as={RouteLink} to="/" >Home</Link>
+          <Link as={RouteLink} to="/services" >Service</Link>
+          <Link as={RouteLink} to="/about" >About us</Link>
         </HStack>
       </Flex>
       <Link color="whiteAlpha.800">
@@ -35,5 +36,6 @@ export const Header = () => {
         <Icon as={FiArrowUpRight} ml="10px" h={5} w={5} />
       </Link>
     </Flex>
+
   );
 };
